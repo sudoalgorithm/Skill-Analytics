@@ -1,0 +1,9 @@
+Flask
+
+flask-login
+
+cloudant
+
+pandas
+
+watson-developer-cloud

@@ -1,0 +1,55 @@
+{
+    "market": [
+      "CEWA: Africa",
+      "Egypt",
+      "ME TOP",
+      "MEP",
+      "Morrocco",
+      "NWA: Africa",
+      "South Africa",
+      "Turkey"
+    ],
+    "pIndustry": [
+        "Banking",
+        "Education",
+        "Government",
+        "Insurance",
+        "Retail",
+        "Telecommunications"
+      ],
+      "pSkills": [
+        "BigInsights - Apache Hadoop",
+        "Cognos Analytics (V11) overall",
+        "Cognos Analytics Enterprise (includes administration / install / configuration)",
+        "Data Integration (DataStage & BigIntegrate)",
+        "DB2",
+        "DB2 for z/OS",
+        "DB2 zTools",
+        "Gardium DBAM",
+        "Infromix",
+        "MDM Advanced Edition",
+        "PureData for Analytics (PDA)"
+      ],
+      "sIndustry": [
+        "Chemicals & Petroleum",
+        "Banking",
+        "Energy & Utilities",
+        "Financial Markets",
+        "Government",
+        "Healthcare",
+        "Insurance",
+        "Media & Entertainment",
+        "Retail",
+        "Telecommunications"
+      ],
+      "skills": [
+        "skill 1",
+        "skill 2",
+        "skill 3"
+      ],
+      "speciality": [
+        "spec 1",
+        "spec 2",
+        "spec 3"
+      ]
+  }

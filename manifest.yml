@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  name: skill-analytics
+  host: skill-analytics
+  disk_quota: 1024M
+  buildpack: python_buildpack
