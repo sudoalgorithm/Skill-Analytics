@@ -45,11 +45,34 @@
       "skills": [
         "skill 1",
         "skill 2",
-        "skill 3"
+        "skill 3",
+        "skill 4",
+        "skill 5"
+
       ],
-      "speciality": [
-        "spec 1",
-        "spec 2",
-        "spec 3"
+      "Speciality": [
+        "Analytics Portfolio",
+        "IIG",
+        "zAnalytics",
+        "MDM",
+        "Analytics Architects",
+        "II",
+        "Data Warehouse/Database Specialist",
+        "Collaboration Solutions Portfolio",
+        "Cloud DevOps Engineer Technical Specialist",
+        "Cloud Integrator Technical Specialist",
+        "Cloud Digital Process Automator Technical Specialist",
+        "Cloud Developer Technical Specialist",
+        "Cloud Services Portfolio",
+        "ECM",
+        "BI & Predictive",
+        "Data Science",
+        "FOPM",
+        "Cloud SysOps Engineer Technical Specialist",
+        "Platform Specialist",
+        "Aspera Technical Specialist",
+        "Big Data",
+        "Analytics Portfolio for SaaS"
+
       ]
   }

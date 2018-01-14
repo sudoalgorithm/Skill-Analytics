@@ -1,62 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Skill Analytics - Login</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../static/stylesheets/bulma.css">
-    <link rel="stylesheet" type="text/css" href="../static/stylesheets/style.css">
-</head>
-
-<body id="login-page">
-
-    <section class="hero is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="feild">
-                    <div class="control">
-                           <input class="input is-primary" type="email" name="username" placeholder="Email" value="{{ reruest.form.username }}"> 
-                    </div>
-                </div>
-                <div class="feild">
-                        <div class="control">
-                               <input class="input is-primary" type="password" name="password" placeholder="Password" value="{{ request.form.password }}"> 
-                        </div>
-                </div>
-                <a class="button is-success">Success</a>
-            </div>
-        </div>
-    </section>
-    <!--<div class="container" style="padding-top:5%">
-        <div class="row" style="text-align:center; padding:10px;">
-            <div class="col-md-4 col-md-offset-4">
-                <h1>Skill Analytics</h1>
-            </div>
-        </div>
-        <div class="row" style="padding:5%;">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please sign in</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form accept-charset="UTF-8" role="form" form action="" method="post">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" type="text" required="true" autofocus="true" value="{{ request.form.username }}">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" required="true" value="{{ request.form.password }}">
-                                </div>
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-</body>
-
-</html>
+{% extends 'layout.html' %}
+{% block title %} Skill Analytics - Login {% endblock %}
+{% block body %}
+<div class="container">
+    <form accept-charset="UTF-8" role="form" form action="" method="post" class="form-signin">
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input  id="inputUsername" class="form-control" placeholder="Username" name="username" type="text" required="true" autofocus="true" value="{{ request.form.username }}">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input id="inputPassword"class="form-control" placeholder="Password" name="password" type="password" required="true" value="{{ request.form.password }}">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+    </form>
+</div>
+{% endblock %}

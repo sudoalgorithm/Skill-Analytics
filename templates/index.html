@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="../static/stylesheets/bulma.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../static/stylesheets/style.css">
 </head>
 
@@ -22,7 +22,7 @@
               <span class="icon-bar"></span>
             </button>
         <a class="navbar-brand" href="#">
-              <img src="" alt="Skills Analytics">
+              <p>Skill Analytics</p>
             </a>
       </div>
 
@@ -46,19 +46,17 @@
   </nav>
 
   <div class="panel panel-primary" id="filters" style="width:50%; margin-left:25%">
-
-    <div class="panel-heading">
-      <h3>Filters</h3>
-    </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-lg-4">
           <div class="dropdown">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Skills <span class="caret"></span></button>
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Level<span class="caret"></span></button>
             <ul class="dropdown-menu" id="skills">
-              <li><a href="#" class="small" data-value="skill 1" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 1</a></li>
-              <li><a href="#" class="small" data-value="skill 2" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 2</a></li>
-              <li><a href="#" class="small" data-value="skill 3" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 3</a></li>
+              <li><a href="#" class="small" data-value="1" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 1</a></li>
+              <li><a href="#" class="small" data-value="2" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 2</a></li>
+              <li><a href="#" class="small" data-value="3" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 3</a></li>
+              <li><a href="#" class="small" data-value="4" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 4</a></li>
+              <li><a href="#" class="small" data-value="5" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;skill 5</a></li>
             </ul>
           </div>
         </div>
@@ -68,9 +66,28 @@
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Speciality
                 <span class="caret"></span></button>
             <ul class="dropdown-menu" id="spec">
-              <li><a href="#" class="small" data-value="spec 1" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;spec 1</a></li>
-              <li><a href="#" class="small" data-value="spec 2" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;spec 2</a></li>
-              <li><a href="#" class="small" data-value="spec 3" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;spec 3</a></li>
+              <li><a href="#" class="small" data-value="Analytics Portfolio" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Analytics Portfolio</a></li>
+              <li><a href="#" class="small" data-value="IIG" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;IIG</a></li>
+              <li><a href="#" class="small" data-value="zAnalytics" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;zAnalytics</a></li>
+              <li><a href="#" class="small" data-value="MDM" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;MDM</a></li>
+              <li><a href="#" class="small" data-value="Analytics Architects" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Analytics Architects</a></li>
+              <li><a href="#" class="small" data-value="II" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;II</a></li>
+              <li><a href="#" class="small" data-value="Data Warehouse/Database Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Data Warehouse/Database Specialist</a></li>
+              <li><a href="#" class="small" data-value="Collaboration Solutions Portfolio" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Collaboration Solutions Portfolio</a></li>
+              <li><a href="#" class="small" data-value="Cloud DevOps Engineer Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud DevOps Engineer Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Cloud Integrator Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud Integrator Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Cloud Digital Process Automator Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud Digital Process Automator Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Cloud Developer Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud Developer Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Cloud Services Portfolio" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud Services Portfolio</a></li>
+              <li><a href="#" class="small" data-value="ECM" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;ECM</a></li>
+              <li><a href="#" class="small" data-value="BI & Predictive" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;BI & Predictive</a></li>
+              <li><a href="#" class="small" data-value="Data Science" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Data Science</a></li>
+              <li><a href="#" class="small" data-value="FOPM" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;FOPM</a></li>
+              <li><a href="#" class="small" data-value="Cloud SysOps Engineer Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cloud SysOps Engineer Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Platform Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Platform Specialist</a></li>
+              <li><a href="#" class="small" data-value="Aspera Technical Specialist" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Aspera Technical Specialist</a></li>
+              <li><a href="#" class="small" data-value="Big Data" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Big Data</a></li>
+              <li><a href="#" class="small" data-value="Analytics Portfolio for SaaS" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Analytics Portfolio for SaaS</a></li
             </ul>
           </div>
         </div>
@@ -116,9 +133,9 @@
                     <span class="caret"></span></button>
             <ul class="dropdown-menu" id="sind">
               <li><a href="#" class="small" data-value="Banking" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Banking</a></li>
-              <li><a href="#" class="small" data-value="Chemicals & Petroleum" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Chemicals & Petroleum</a></li>
-              <li><a href="#" class="small" data-value="Energy & Utilities" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Energy & Utilities</a></li>
-              <li><a href="#" class="small" data-value="Media & Entertainment" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Media & Entertainment</a></li>
+              <li><a href="#" class="small" data-value="Chemicals and Petroleum" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Chemicals and Petroleum</a></li>
+              <li><a href="#" class="small" data-value="Energy and Utilities" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Energy and Utilities</a></li>
+              <li><a href="#" class="small" data-value="Media and Entertainment" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Media and Entertainment</a></li>
               <li><a href="#" class="small" data-value="Retail" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Retail</a></li>
               <li><a href="#" class="small" data-value="Insurance" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Insurance</a></li>
               <li><a href="#" class="small" data-value="Financial Markets" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Financial Markets</a></li>
@@ -137,7 +154,7 @@
               <li><a href="#" class="small" data-value="Cognos Analytics (V11) overall" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cognos Analytics (V11) overall</a></li>
               <li><a href="#" class="small" data-value="Cognos Analytics Enterprise (includes administration / install / configuration)"
                   tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Cognos Analytics Enterprise (includes administration / install / configuration)</a></li>
-              <li><a href="#" class="small" data-value="Data Integration (DataStage & BigIntegrate)" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Data Integration (DataStage & BigIntegrate)</a></li>
+              <li><a href="#" class="small" data-value="Data Integration (DataStage and BigIntegrate)" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Data Integration (DataStage & BigIntegrate)</a></li>
               <li><a href="#" class="small" data-value="DB2" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;DB2</a></li>
               <li><a href="#" class="small" data-value="DB2 for z/OS" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;DB2 for z/OS</a></li>
               <li><a href="#" class="small" data-value="DB2 zTools" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;DB2 zTools</a></li>
@@ -152,7 +169,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-lg-offset-4 col-lg-1">
         <div class="hidden" style="height:40px;" id="loader">

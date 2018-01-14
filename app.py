@@ -3,6 +3,8 @@
 #
 # copyright IBM 2017
 #
+# App alos uses functions in the functions/ dir, i think the functions are self explanatory, but let me know if you have any questions
+
 
 import os, json
 import pandas as pd
@@ -13,7 +15,7 @@ from functools import reduce
 from flask import Flask, jsonify, request, Response, flash, \
                     redirect, render_template, url_for, abort
 from flask_login import LoginManager, UserMixin,\
-                                login_required, login_user, logout_user 
+                                login_required, login_user, logout_user
 
 app = Flask(__name__)
 
@@ -31,11 +33,11 @@ class User(UserMixin):
         self.id = id
         self.name = name
         self.password = password
-        
+
     def __repr__(self):
         return "%d/%s/%s" % (self.id, self.name, self.password)
 
-
+# to clear cache after some time to ensure js and images are updated during dev
 @app.after_request
 def add_header(response):
     """
@@ -47,6 +49,10 @@ def add_header(response):
     return response
 
 
+# api to query the db, takes in a json object that contains 6 key-val pairs, each val is a list of skills,
+# markts, specialiyt, primary industry, secondary industry, and primary skills.
+
+
 @app.route('/query', methods=['GET'])
 @login_required
 def getPeople():
@@ -55,7 +61,7 @@ def getPeople():
     columns = data.columns.values
 
     query = json.loads(request.args.get('query'))
-    
+
     s = json.loads(query['skills'])
     m = json.loads(query['market'])
     sp = json.loads(query['speciality'])
@@ -72,6 +78,8 @@ def getPeople():
     # if len(s) > 0:
     #     sResults = data.loc[data['Skills'].isin(s)]
 
+
+    # obtain records that match each query list
     if len(m) > 0:
         mResults = set(data.loc[data['Market'].isin(m)].index.values)
         d.append(mResults)
@@ -79,7 +87,7 @@ def getPeople():
     if len(sp) > 0:
         spResults = set(data.loc[data['Specialty'].isin(sp)].index.values)
         d.append(spResults)
-        
+
     if len(pi) > 0:
         piResults = set(data.loc[data['Primary Industry'].isin(pi)].index.values)
         d.append(piResults)
@@ -92,17 +100,23 @@ def getPeople():
         psResults = set(data.loc[data['Primary Skill'].isin(si)].index.values)
         d.append(psResults)
 
-    r = list(reduce(set.intersection, d) )   
+    # find the intersection between matched records
+    r = list(reduce(set.intersection, d) )
     d = data.loc[r]
-    result = d.to_json(orient='records')    
+    result = d.to_json(orient='records')
 
     return result
 
+# route to render chat ui
 @app.route('/chat')
 @login_required
 def chat():
 
     return render_template('chat.html')
+
+# route that recieves a message and sends it to watson  conversation and gets back a response.
+# if response is query, it then checks for entities and then should pass these to the query api
+# (not yet implimented). if not, it just returns the response from watson conversation
 
 @app.route('/message')
 @login_required
@@ -121,17 +135,21 @@ def message():
     res = json.dumps(response['output']['text'][0])
     return res
 
+# render home page
 @app.route('/')
 @login_required
 def home():
     return render_template('index.html')
 
+
+# get = renders home page
+# put = authenticates
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password'] 
-        success, uid = auth(username, password)    
+        password = request.form['password']
+        success, uid = auth(username, password)
         if(success):
             login_user(User(uid, username, password))
             flash('Logged in successfully.')
@@ -141,23 +159,24 @@ def login():
     else:
         return render_template("login.html")
 
+# api for login
 @app.route("/logout", methods=["GET"])
 @login_required
 def logout():
     logout_user()
     return url_for('login')
-        
+
 # handle login failed
 @app.errorhandler(401)
 def page_not_found(e):
     return Response('<p>Login failed, Invalid username or password</p>')
-    
-# callback to reload the user object        
+
+# callback to reload the user object
 @login_manager.user_loader
 def load_user(uid):
     user = checkID(uid)
-    return User(user['id'], user['name'], user['password']) 
-    
+    return User(user['id'], user['name'], user['password'])
+
 port = os.getenv('PORT', '8080')
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', port=int(port))
