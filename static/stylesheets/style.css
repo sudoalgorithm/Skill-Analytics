@@ -102,11 +102,10 @@
 @media (min-width: 768px){
   .affix-content .container {
     width: 700px;
-  }   
-    .affix-content .container .page-header{
+  }
+  .affix-content .container .page-header{
     margin-top: 0;
   }
-
   .affix-sidebar{
     padding-right:0; 
     font-size:small;
@@ -192,19 +191,21 @@
   .navbar-collapse{
     padding: 0;
   }
-  .sidebar-nav .navbar li a:hover {
-    background-color: #428bca;
-    color: white;
-  }
+  
   .sidebar-nav .navbar li a > .caret {
     margin-top: 8px;
   }  
 }
-
 .navbar-override{
   margin-bottom: 0px !important;
 }
 
-.container-fluid-override{
-  padding: 0px !important;
+a{
+  color: black;
 }
+
+li{
+  font-size: 15px;
+}
+
+
