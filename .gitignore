@@ -1,2 +1,5 @@
 venv
+.vscode
+credentials.json
+.cfignore
 
