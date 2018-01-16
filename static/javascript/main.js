@@ -254,3 +254,5 @@ $('#pskill a').on('click', function (event) {
     return false;
 });
 
+
+

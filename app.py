@@ -53,7 +53,7 @@ def add_header(response):
 # markts, specialiyt, primary industry, secondary industry, and primary skills.
 
 
-@app.route('/query', methods=['GET'])
+@app.route('/query' , methods=['GET'])
 @login_required
 def getPeople():
 
@@ -69,17 +69,21 @@ def getPeople():
     si = json.loads(query['sindustry'])
     ps = json.loads(query['pskills'])
 
+    print query
+
+    sResult = []
     mResults = []
     spResults = []
     piResults = []
     siResults = []
     psResults = []
     d = []
-    # if len(s) > 0:
-    #     sResults = data.loc[data['Skills'].isin(s)]
-
-
+    
     # obtain records that match each query list
+    if len(s) > 0:
+        sResult = set(data.loc[data['skills'].isin(s)].index.values)
+        d.append(sResult)
+
     if len(m) > 0:
         mResults = set(data.loc[data['Market'].isin(m)].index.values)
         d.append(mResults)

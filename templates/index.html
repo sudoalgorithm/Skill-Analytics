@@ -46,7 +46,20 @@
             <div class="navbar-collapse collapse sidebar-navbar-collapse">
               <ul class="nav navbar-nav" id="sidenav01">
                 <li>
-                  <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">Level <span class="caret pull-right"></span></a>
+                  <ul class="nav nav-list">
+                      <div class="row">
+                          <div class="col-md-6">
+                            <button class="btn btn-success btn-specification" id="search" style="float:right">Search</button>
+                          </div>
+                          <div class="col-md-6">
+                            <button class="btn btn-warning btn-specification" id="clear">Clear</button>
+                          </div>
+                    </div>
+                    <br>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed"><strong>Level</strong><span class="caret pull-right"></span></a>
                   <div class="collapse" id="toggleDemo" style="height: 0px;">
                     <ul class="nav nav-list" id="skills">
                         <li><a href="#" class="small" data-value="1" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Skill 1</a></li>
@@ -58,7 +71,7 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">Speciality <span class="caret pull-right"></span></a>
+                  <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed"><strong>Speciality</strong><span class="caret pull-right"></span></a>
                   <div class="collapse" id="toggleDemo2" style="height: 0px;">
                     <ul class="nav nav-list" id="spec">
                       <li><a href="#" class="small" data-value="Analytics Portfolio" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Analytics Portfolio</a></li>
@@ -87,7 +100,7 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" data-toggle="collapse" data-target="#toggleDemo3" data-parent="#sidenav01" class="collapsed">Market <span class="caret pull-right"></span></a>
+                  <a href="#" data-toggle="collapse" data-target="#toggleDemo3" data-parent="#sidenav01" class="collapsed"><strong>Market</strong><span class="caret pull-right"></span></a>
                   <div class="collapse" id="toggleDemo3" style="height: 0px;">
                     <ul class="nav nav-list" id="market">
                         <li><a href="#" class="small" data-value="CEWA: Africa" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;CEWA: Africa</a></li>
@@ -102,7 +115,7 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" data-toggle="collapse" data-target="#toggleDemo4" data-parent="#sidenav01" class="collapsed">Primary Industry <span class="caret pull-right"></span></a>
+                  <a href="#" data-toggle="collapse" data-target="#toggleDemo4" data-parent="#sidenav01" class="collapsed"><strong>Primary Industry</strong><span class="caret pull-right"></span></a>
                   <div class="collapse" id="toggleDemo4" style="height: 0px;">
                     <ul class="nav nav-list" id="pind">
                         <li><a href="#" class="small" data-value="Banking" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Banking</a></li>
@@ -115,7 +128,7 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" data-toggle="collapse" data-target="#toggleDemo5" data-parent="#sidenav01" class="collapsed">Secondary Industry <span class="caret pull-right"></span></a>
+                  <a href="#" data-toggle="collapse" data-target="#toggleDemo5" data-parent="#sidenav01" class="collapsed"><strong>Secondary Industry</strong><span class="caret pull-right"></span></a>
                     <div class="collapse" id="toggleDemo5" style="height: 0px;">
                       <ul class="nav nav-list" id="sind">
                           <li><a href="#" class="small" data-value="Banking" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;Banking</a></li>
@@ -131,7 +144,7 @@
                     </div>
                   </li>
                   <li>
-                    <a href="#" data-toggle="collapse" data-target="#toggleDemo6" data-parent="#sidenav01" class="collapsed">Primary Skill <span class="caret pull-right"></span></a>
+                    <a href="#" data-toggle="collapse" data-target="#toggleDemo6" data-parent="#sidenav01" class="collapsed"><strong>Primary Skill</strong><span class="caret pull-right"></span></a>
                     <div class="collapse" id="toggleDemo6" style="height: 0px;">
                         <ul class="nav nav-list" id="pskill">
                             <li><a href="#" class="small" data-value="BigInsights - Apache Hadoop" tabIndex="-1"><input name='chk' type="checkbox"/>&nbsp;BigInsights - Apache Hadoop</a></li>
@@ -155,47 +168,32 @@
       </div>
   </div>
 	<div class="col-sm-9 col-md-10 affix-content">
-		<div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-offset-4 col-lg-1">
-              <div class="hidden" style="height:40px;" id="loader">
-                <div class="loader"></div>
-              </div>
-            </div>
-            <div class="col-lg-1">
-              <button class="btn btn-primary" id="search">Search</button>
-            </div>
-            <div class="col-lg-1">
-              <button class="btn btn-primary" id="clear">Clear</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
-              <table class="table table-striped">
+    <br>
+          <div class="responsive">
+              <table class="table table-bordered box-shadow--6dp">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Market</th>
-                    <th>Skills</th>
-                    <th>Primary Ind.</th>
-                    <th>Secondary Ind.</th>
-                    <th>Primary Skill</th>
+                    <th class="text-center">S.No.</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Market</th>
+                    <th class="text-center">Skills</th>
+                    <th class="text-center">Primary Industry</th>
+                    <th class="text-center">Secondary Industry.</th>
+                    <th class="text-center">Primary Skill</th>
                   </tr>
                 </thead>
                 <tbody id="tableList">
-        
+                  
                 </tbody>
               </table>
             </div>
-          </div>
           <div id="test">
         
           </div>
 		</div>
 	</div>
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
