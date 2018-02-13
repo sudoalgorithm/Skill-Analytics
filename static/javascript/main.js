@@ -1,4 +1,4 @@
-var skills = [];
+var level = [];
 var market = [];
 var speciality = [];
 var pIndustry = [];
@@ -22,10 +22,10 @@ $('document').ready(function () {
     });
 
     $('#search').click(function () {
-
+        
         loading(true);
 
-        s = JSON.stringify(skills);
+        s = JSON.stringify(level);
         m = JSON.stringify(market);
         sp = JSON.stringify(speciality);
         pi = JSON.stringify(pIndustry);
@@ -33,7 +33,7 @@ $('document').ready(function () {
         ps = JSON.stringify(pSkill);
 
         var options = {
-            'skills': s,
+            'level': s,
             'market': m,
             'speciality': sp,
             'pindustry': pi,
@@ -52,6 +52,10 @@ $('document').ready(function () {
             contentType: "application/json"
         })
             .done(function (response) {
+                var table = document.getElementById("tableList");
+                while (table.rows.length > 0) {
+                    table.deleteRow(0);
+                }
                 populateTable(response)
                 loading(false);
             });
@@ -62,7 +66,7 @@ $('document').ready(function () {
             checks[i].checked = false;
         }
 
-        skills = [];
+        level = [];
         market = [];
         speciality = [];
         pindustry = [];
@@ -82,7 +86,7 @@ $('document').ready(function () {
             checks[i].checked = false;
         }
 
-        skills = [];
+        level = [];
         market = [];
         speciality = [];
         pindustry = [];
@@ -92,6 +96,7 @@ $('document').ready(function () {
     })
 
 });
+
 
 function populateTable(records) {
     var table = document.getElementById("tableList");
@@ -122,7 +127,7 @@ function loading(ennable) {
     }
 }
 
-$('#skills a').on('click', function (event) {
+$('#level a').on('click', function (event) {
 
     var $target = $(event.currentTarget),
         val = $target.attr('data-value'),
@@ -131,11 +136,11 @@ $('#skills a').on('click', function (event) {
 
     checks.push($inp[0]);
 
-    if ((idx = skills.indexOf(val)) > -1) {
-        skills.splice(idx, 1);
+    if ((idx = level.indexOf(val)) > -1) {
+        level.splice(idx, 1);
         setTimeout(function () { $inp.prop('checked', false) }, 0);
     } else {
-        skills.push(val);
+        level.push(val);
         setTimeout(function () { $inp.prop('checked', true) }, 0);
     }
 

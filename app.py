@@ -7,6 +7,7 @@
 
 
 import os, json
+
 import pandas as pd
 from functions.auth_user import auth, checkID
 from functions.database import getAllUsers
@@ -19,7 +20,10 @@ from flask_login import LoginManager, UserMixin,\
 
 app = Flask(__name__)
 
-app.config.update(SECRET_KEY = 'aoun@ibm')
+app.config.update(SECRET_KEY = 'kunal@ibm')
+
+latitude = []
+longitude = [] 
 
 # flask-login
 login_manager = LoginManager()
@@ -62,7 +66,7 @@ def getPeople():
 
     query = json.loads(request.args.get('query'))
 
-    s = json.loads(query['skills'])
+    s = json.loads(query['level'])
     m = json.loads(query['market'])
     sp = json.loads(query['speciality'])
     pi = json.loads(query['pindustry'])
@@ -81,7 +85,7 @@ def getPeople():
     
     # obtain records that match each query list
     if len(s) > 0:
-        sResult = set(data.loc[data['skills'].isin(s)].index.values)
+        sResult = set(data.loc[data['Level'].isin(s)].index.values)
         d.append(sResult)
 
     if len(m) > 0:
@@ -138,6 +142,12 @@ def message():
     print e
     res = json.dumps(response['output']['text'][0])
     return res
+
+@app.route('/maps')
+@login_required
+def maps():
+    return render_template('maps.html')
+
 
 # render home page
 @app.route('/')

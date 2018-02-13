@@ -9,7 +9,7 @@ import pandas as pd
 import json
 
 
-SKILLS = 'skills'
+LEVEL = 'level'
 MARKET = 'market'
 P_IND = 'pIndustry'
 S_IND = 'sIndustry'
