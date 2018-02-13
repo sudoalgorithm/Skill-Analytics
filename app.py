@@ -7,7 +7,6 @@
 
 
 import os, json
-
 import pandas as pd
 from functions.auth_user import auth, checkID
 from functions.database import getAllUsers
@@ -21,9 +20,6 @@ from flask_login import LoginManager, UserMixin,\
 app = Flask(__name__)
 
 app.config.update(SECRET_KEY = 'kunal@ibm')
-
-latitude = []
-longitude = [] 
 
 # flask-login
 login_manager = LoginManager()
@@ -115,33 +111,6 @@ def getPeople():
 
     return result
 
-# route to render chat ui
-@app.route('/chat')
-@login_required
-def chat():
-
-    return render_template('chat.html')
-
-# route that recieves a message and sends it to watson  conversation and gets back a response.
-# if response is query, it then checks for entities and then should pass these to the query api
-# (not yet implimented). if not, it just returns the response from watson conversation
-
-@app.route('/message')
-@login_required
-def message():
-
-    query = request.args.get('message')
-    m = {'text': query}
-    conversation = getConversationSevice()
-    response = conversation.message(WORKSPACE, m)
-    entities = json.dumps(response['entities'])
-    e = []
-    for ent in entities:
-        print ent
-        # e.append(ent['value'])
-    print e
-    res = json.dumps(response['output']['text'][0])
-    return res
 
 @app.route('/maps')
 @login_required
