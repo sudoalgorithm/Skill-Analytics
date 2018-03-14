@@ -120,6 +120,7 @@ def maps():
 
 # render home page
 @app.route('/')
+@app.route('/home')
 @login_required
 def home():
     return render_template('index.html')

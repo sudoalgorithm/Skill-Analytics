@@ -107,7 +107,7 @@ function populateTable(records) {
         row.insertCell(0).innerHTML = rec['Name'];
         row.insertCell(1).innerHTML = rec['Email'];
         row.insertCell(2).innerHTML = rec['Market'];
-        row.insertCell(3).innerHTML = "";
+        row.insertCell(3).innerHTML = rec['Skills'];
         row.insertCell(4).innerHTML = rec['Primary Industry'];
         row.insertCell(5).innerHTML = rec['Secondary Industry'];
         row.insertCell(6).innerHTML = rec['Primary Skill'];
